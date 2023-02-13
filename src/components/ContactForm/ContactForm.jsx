@@ -14,17 +14,15 @@ export class ContactForm extends Component {
 
   addContact = e => {
     e.preventDefault();
-    console.log('this is state', this.state);
+
     this.props.onSubmit(this.state);
-    // this.setState({
-    //   name: e.currentTarget.value,
-    // });
     this.reset();
   };
 
   reset = () => {
     this.setState({ name: '', number: '' });
   };
+
   render() {
     return (
       <form onSubmit={this.addContact}>

@@ -1,15 +1,17 @@
 import { ContactItem } from 'components/ContactItem/ContactItem';
 
-export const ContactList = ({ contacts }) => {
-  // console.log(contacts.map(_ => console.log(_)));
-  console.log('contacts in list', contacts);
+export const ContactList = ({ contacts, deleteContact }) => {
   return (
     <ul>
       {contacts.length > 0 &&
-        contacts.map(contact => (
-          <ContactItem name={contact.name} number={contact.number} />
+        contacts.map((contact, idx) => (
+          <ContactItem
+            key={idx}
+            name={contact.name}
+            number={contact.number}
+            deleteContact={deleteContact}
+          />
         ))}
-      <li> hello</li>
     </ul>
   );
 };
