@@ -13,6 +13,10 @@ export const Input = styled.input`
     outline: 2px solid ${input => input.theme.colors.accent};
     outline-offset: -2px;
   }
+
+  &:disabled {
+    border: 1px solid ${input => input.theme.colors.secondary};
+  }
 `;
 export const Label = styled.label`
   position: absolute;
