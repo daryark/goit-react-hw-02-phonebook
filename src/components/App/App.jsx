@@ -128,7 +128,6 @@ export class App extends Component {
               </Notification>
             ) : (
               <ContactList
-                contacts={contacts}
                 deleteContact={this.handleClickDelete}
                 filter={filteredContacts}
               />

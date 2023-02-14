@@ -1,4 +1,4 @@
-import PtopTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import { FaRegTrashAlt } from 'react-icons/fa';
 import { Notification } from 'components/common/Notification/Notification.styled';
 import { ContactInfo, ContactItem, DeleteBtn } from './ContactList.styled';
@@ -28,10 +28,12 @@ export const ContactList = ({ deleteContact, filter }) => {
 };
 
 ContactList.propTypes = {
-  deleteContact: PropTypes.shape({
-    name: PropTypes.string.isRequired,
-    number: PropTypes.string.isRequired,
-    id: PropTypes.string.isRequired,
-  }).isRequired,
-  // filter: PropTypes.arrayOf(),
+  deleteContact: PropTypes.func.isRequired,
+  filter: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string,
+      number: PropTypes.string,
+      id: PropTypes.string,
+    })
+  ).isRequired,
 };

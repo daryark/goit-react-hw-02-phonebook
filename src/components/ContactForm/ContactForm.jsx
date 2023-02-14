@@ -1,4 +1,5 @@
 import { Component } from 'react';
+import PropTypes from 'prop-types';
 import { FaPhoneAlt, FaUserAlt } from 'react-icons/fa';
 
 import { AddContactForm, FormBtn } from './ContactForm.styled';
@@ -62,3 +63,7 @@ export class ContactForm extends Component {
     );
   }
 }
+
+ContactForm.propTypes = {
+  submitFn: PropTypes.func.isRequired,
+};
